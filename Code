@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="Canvas" width="1570" height="780"></canvas>
+
+<script>
+var canvas = document.getElementById("Canvas");
+var ctx = canvas.getContext("2d");
+var y = 0;
+var lado = 100;
+
+function quadsPretos() {
+	while(y<9){
+			for(var i=0; i<800; i+=200){
+				ctx.beginPath();
+				if(y%2==0){ctx.rect(i+100,y*100,lado,lado);}
+				else{ctx.rect(i,y*100,lado,lado);}
+				ctx.fillStyle="rgb(0,0,0)";
+				ctx.fill();
+			}
+		y+=1;
+	}
+}
+
+		//Background
+		ctx.beginPath();
+		ctx.fillStyle="rgb(255,255,255)";
+		ctx.fillRect(0,0,1570,780);
+		ctx.stroke();
+
+		quadsPretos();
+
+</script>
+
+</body>
+</html>
